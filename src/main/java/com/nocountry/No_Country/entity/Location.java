@@ -3,15 +3,19 @@ package com.nocountry.No_Country.entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
+@Table(name="location")
 public class Location {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,7 +26,11 @@ public class Location {
     private String city;
     @NotNull
     private String state;
+
+    @NotNull
     @OneToMany(mappedBy = "location")
-    @JoinColumn(name="shop_id")
-    private List<Shop> shopList;
+    private List<User> users;
+
+    @OneToMany(mappedBy = "location")
+    private List<Shop> shops;
 }

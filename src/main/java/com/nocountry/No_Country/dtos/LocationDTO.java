@@ -24,4 +24,5 @@ public class LocationDTO {
     private String state;
 
     private List<ShopDTO> shopList;
+    private List<UserDTO> userList;
 }

@@ -7,23 +7,28 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
+@Table(name="cart")
 public class Cart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-    @OneToMany(cascade = CascadeType.PERSIST)
-    private List<Item> items;
     @NotNull
     private LocalDateTime localDateTime = LocalDateTime.now();
     @NotNull
     private Double totalAmount;
+
+
+    @OneToMany(mappedBy = "cart")
+    private List<Item> items;
 
     @OneToOne
     private User user;

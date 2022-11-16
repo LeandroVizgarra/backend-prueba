@@ -6,12 +6,15 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
+@Table(name="user")
 public class User {
 
     @Id
@@ -24,12 +27,12 @@ public class User {
     @NotNull
     @Email
     private String email;
-    @NotNull
+    @NotNull @Min(0)@Max(8)
     private String password;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     @JoinColumn(name="location")
-    private Location locationId;
+    private Location location;
 
     @OneToOne
     private Cart cart;

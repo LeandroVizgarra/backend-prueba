@@ -1,21 +1,11 @@
 package com.nocountry.No_Country.dtos;
 
-import com.nocountry.No_Country.entity.Cart;
-import com.nocountry.No_Country.entity.Location;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import javax.persistence.CascadeType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
+import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class UserDTO {
 
     private Long id;
@@ -28,7 +18,11 @@ public class UserDTO {
 
     private String password;
 
-    private Long locationId;
+    private LocationDTO locationId;
 
-    private Long cartId;
+    private CartDTO cartDTO;
+
+
+    public UserDTO(Long id, String password, Long id1, String email, String firstName, String lastName, Long location_id) {
+    }
 }

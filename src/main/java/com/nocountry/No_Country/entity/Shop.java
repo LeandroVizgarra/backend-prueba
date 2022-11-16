@@ -11,6 +11,7 @@ import javax.validation.constraints.NotNull;
 @Getter
 @Setter
 @NoArgsConstructor
+@Table(name="shop")
 public class Shop {
 
     @Id
@@ -26,8 +27,8 @@ public class Shop {
     private String password;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name="location")
-    private Location locationId;
+    @JoinColumn(name="location_id")
+    private Location location;
 
 
 }
