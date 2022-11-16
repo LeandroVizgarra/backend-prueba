@@ -1,5 +1,6 @@
 package com.nocountry.No_Country.mapper;
 
+import com.nocountry.No_Country.dtos.BasicLocationDTO;
 import com.nocountry.No_Country.dtos.LocationDTO;
 import com.nocountry.No_Country.entity.Location;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +28,13 @@ public class LocationMapper {
         location.setState(dto.getState());
         location.setCity(dto.getCity());
         return location;
+    }
+
+    public BasicLocationDTO locationEntity2BasicDTO (Location location){
+        BasicLocationDTO basicLocationDTO = new BasicLocationDTO();
+        basicLocationDTO.setCity(location.getCity());
+        basicLocationDTO.setState(location.getState());
+        basicLocationDTO.setShopList(shopMapper.shopEntityList2DTOList(location.getShops()));
+        return basicLocationDTO;
     }
 }
