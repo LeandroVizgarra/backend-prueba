@@ -16,9 +16,15 @@ public class ShopController {
 
     //TODO Crear DTOS en base a necesidades para evitar información no util.
 
-    //TODO agregar Stringo horarios de atencion a SHOP
+    //TODO Comparar costos entre productos de una misma ciudad
+
+    //TODO agregar String horarios de atencion a SHOP
 
     //TODO agregar String para UrlImage a items
 
-    //TODO Comparar costos entre productos de una misma ciudad
+    //TODO agregar String para UrlImage a shop
+
+    //TODO Agregar Double a shop para costo de envio
+
+    //
 }
