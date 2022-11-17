@@ -11,10 +11,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class LocationServiceImpl implements LocationService {
 
+    private final LocationMapper locationMapper;
+    private final LocationRepository locationRepository;
     @Autowired
-    private LocationMapper locationMapper;
-    @Autowired
-    private LocationRepository locationRepository;
+    public LocationServiceImpl(LocationMapper locationMapper, LocationRepository locationRepository) {
+        this.locationMapper = locationMapper;
+        this.locationRepository = locationRepository;
+    }
 
 
     public BasicLocationDTO getBasicLocationById(Long id){
