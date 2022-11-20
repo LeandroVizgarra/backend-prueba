@@ -16,6 +16,7 @@ public class ItemMapper {
         dto.setId(item.getId());
         dto.setName(item.getName());
         dto.setPrice(item.getPrice());
+        dto.setImageUrl(item.getImageUrl());
         return dto;
     }
 

@@ -18,6 +18,7 @@ public class ShopMapper {
         dto.setName(shop.getName());
         dto.setLocationId(shop.getLocation().getLocation_id());
         dto.setPhoneNumber(shop.getPhoneNumber());
+        dto.setImageUrl(shop.getImageUrl());
         return dto;
     }
 

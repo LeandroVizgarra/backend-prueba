@@ -5,9 +5,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-
 @Getter
 @Setter
 @NoArgsConstructor
@@ -18,5 +15,6 @@ public class ItemDTO {
     private Double price;
     private Long stock;
     private CategoryEnum category;
+    private String imageUrl;
 
 }

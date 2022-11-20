@@ -11,4 +11,6 @@ public class BasicShopDTO {
     private String name;
     private Long phoneNumber;
     private Long locationId;
+    private String imageUrl;
+
 }
