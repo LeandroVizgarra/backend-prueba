@@ -23,12 +23,12 @@ public class Item {
     private String name;
     @NotNull
     private Double price;
-
     @NotNull @Min(0)
     private Long stock;
-
     @NotNull
     private CategoryEnum category;
+    @NotNull
+    private String imageUrl;
 
     @ManyToOne
     @JoinColumn(name="cart_id")

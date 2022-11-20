@@ -25,6 +25,8 @@ public class Shop {
     private String email;
     @NotNull
     private String password;
+    @NotNull
+    private String imageUrl;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name="location_id")
